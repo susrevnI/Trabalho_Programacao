@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: LightGray;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.trabalho_javafx.CadastrosController">
+   <children>
+      <TabPane fx:id="tabPane" layoutY="29.0" prefHeight="337.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <tabs>
+          <Tab onSelectionChanged="#tabFuncionarios" text="Funcionários">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Cadastro">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="67.0" prefHeight="39.0" prefWidth="185.0" text="Nome Completo:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoNomeFunc" layoutX="223.0" layoutY="67.0" prefHeight="39.0" prefWidth="500.0" promptText="Nome">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="campoDataNascFunc" layoutX="223.0" layoutY="106.0" prefHeight="39.0" prefWidth="500.0" promptText="Data de nascimento">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="106.0" prefHeight="39.0" prefWidth="185.0" text="Data de Nascimento">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoCpfFUnc" layoutX="223.0" layoutY="145.0" prefHeight="39.0" prefWidth="500.0" promptText="CPF">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="145.0" prefHeight="39.0" prefWidth="185.0" text="CPF:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoCnpjFunc" layoutX="223.0" layoutY="184.0" prefHeight="39.0" prefWidth="500.0" promptText="CNPJ">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="184.0" prefHeight="39.0" prefWidth="185.0" text="CNPJ:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoEmailFunc" layoutX="223.0" layoutY="223.0" prefHeight="39.0" prefWidth="500.0" promptText="Email">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="223.0" prefHeight="39.0" prefWidth="185.0" text="Email:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="262.0" prefHeight="39.0" prefWidth="185.0" text="Telefone:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoTelefoneFunc" layoutX="223.0" layoutY="262.0" prefHeight="39.0" prefWidth="500.0" promptText="Telefone">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button layoutX="270.0" layoutY="335.0" mnemonicParsing="false" onAction="#botaoSalvarFunc" prefHeight="54.0" prefWidth="116.0" text="Salvar">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Consulta">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="colunaNomeFunc" prefWidth="210.0" text="Nome" />
+                                                <TableColumn fx:id="colunaDataNascFunc" minWidth="0.0" text="Data Nasc..." />
+                                                <TableColumn fx:id="colunaCpfFunc" prefWidth="100.0" text="CPF" />
+                                                <TableColumn fx:id="colunaCnpjFunc" prefWidth="130.0" text="CNPJ" />
+                                                <TableColumn fx:id="ColunaEmailFunc" prefWidth="150.0" text="Email" />
+                                                <TableColumn fx:id="colunaTelefoneFunc" prefWidth="110.0" text="Telefone" />
+                                                <TableColumn fx:id="colunaEditarFunc" minWidth="0.0" prefWidth="60.0" text="Editar" />
+                                                <TableColumn fx:id="colunaDeletarFunc" minWidth="0.0" prefWidth="60.0" text="Deletar" />
+                                             </columns></TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#tabEquipes" text="Equipes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab text="Cadastro">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutX="66.0" layoutY="33.0" prefHeight="200.0" prefWidth="765.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                                            <columns>
+                                              <TableColumn fx:id="colunaNomeIntegr" prefWidth="209.0" text="Nome Integrante" />
+                                              <TableColumn fx:id="colunaFuncaoIntegr" prefWidth="108.0" text="Função" />
+                                                <TableColumn fx:id="colunaCpfIntegr" prefWidth="98.0" text="CPF" />
+                                                <TableColumn fx:id="colunaTelefoneIntegr" prefWidth="101.0" text="Telefone" />
+                                                <TableColumn fx:id="colunaEmailIntegr" prefWidth="129.0" text="Email" />
+                                                <TableColumn fx:id="colunaEditarIntegr" prefWidth="61.0" text="Editar" />
+                                                <TableColumn fx:id="colunaDeletarIntegr" prefWidth="61.0" text="Deletar" />
+                                            </columns>
+                                          </TableView>
+                                          <Button layoutX="115.0" layoutY="256.0" mnemonicParsing="false" onAction="#botaoCadastrarMembro" prefHeight="40.0" text="Cadatrar membro" />
+                                          <Button layoutX="612.0" layoutY="256.0" mnemonicParsing="false" onAction="#botaoCadastrarCarro" prefHeight="40.0" text="Cadatrar carro" />
+                                          <Button layoutX="209.0" layoutY="415.0" mnemonicParsing="false" onAction="#botaoCadastrarEquipe" prefHeight="40.0" text="Cadatrar equipe" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="319.0" text="Nome da equipe:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="85.0" layoutY="357.0" text="CNPJ da equipe:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoNomeEquipe" layoutX="209.0" layoutY="316.0" prefHeight="32.0" prefWidth="500.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="campoCnpjEquipe" layoutX="209.0" layoutY="354.0" prefHeight="32.0" prefWidth="264.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button layoutX="717.0" layoutY="256.0" mnemonicParsing="false" onAction="#botaoVerCarro" prefHeight="40.0" text="Ver carro" />
+                                       </children></AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Consulta">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="colunaNomeEquipe" prefWidth="165.0" text="Nome Equipe" />
+                                                <TableColumn fx:id="colunaCnpjEquipe" prefWidth="135.0" text="CNPJ" />
+                                                <TableColumn fx:id="colunaNumIntegrEquipe" prefWidth="86.0" text="N° integrantes" />
+                                                <TableColumn fx:id="colunaLiderEquipe" prefWidth="163.0" text="Nome Lider" />
+                                                <TableColumn fx:id="ColunaCorredorEquipe" prefWidth="163.0" text="Nome Corredor" />
+                                                <TableColumn fx:id="colunaCarroEquipe" prefWidth="68.0" text="Placa Carro" />
+                                                <TableColumn fx:id="colunaEditraEqupe" prefWidth="60.0" text="Editar" />
+                                                <TableColumn fx:id="colunaDeletarEquipe" prefWidth="60.0" text="Deletar" />
+                                             </columns></TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab onSelectionChanged="#tabAcidentes" text="Acidentes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab text="Cadastro">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="25.0" layoutY="295.0" text="Titulo do acidente:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView layoutX="70.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+                                            <columns>
+                                              <TableColumn fx:id="colunaDescricaoDano" prefWidth="760.0" text="Descrição do dano" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="86.0" layoutY="243.0" text="Dano causado:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoDanoAcidente" layoutX="211.0" layoutY="239.0" prefHeight="35.0" prefWidth="490.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button layoutX="716.0" layoutY="240.0" mnemonicParsing="false" onAction="#botaoAdicionarDano" prefHeight="33.0" prefWidth="97.0" text="Adicionar dano" />
+                                          <TextField fx:id="campoTittuloAcidente" layoutX="179.0" layoutY="291.0" prefHeight="35.0" prefWidth="338.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="57.0" layoutY="355.0" text="Relatório do ocorrido:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="campoRelatorioAcidente" layoutX="239.0" layoutY="355.0" prefHeight="123.0" prefWidth="591.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Button layoutX="86.0" layoutY="408.0" mnemonicParsing="false" onAction="#botaoCadastrarAcidente" prefHeight="51.0" prefWidth="117.0" text="Cadastrar Acidente" />
+                                          <Label layoutX="520.0" layoutY="295.0" text="Data/Horário:">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoDataAcidente" layoutX="632.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="728.0" layoutY="295.0" text="/">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="campoHorarioAcidente" layoutX="736.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                       </children></AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Consulta">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columns>
+                                                <TableColumn fx:id="colunaTituoAcidente" prefWidth="350.0" text="Titulo Acidente" />
+                                                <TableColumn fx:id="colunaDataHorario" prefWidth="130.0" text="Data/Horário" />
+                                                <TableColumn fx:id="colunaDanosAcidente" prefWidth="75.0" text="Danos" />
+                                                <TableColumn fx:id="colunaRelatorioAcidente" prefWidth="75.0" text="Relatório" />
+                                                <TableColumn fx:id="colunaEditarAcidente" prefWidth="60.0" text="Editar" />
+                                                <TableColumn fx:id="colunaDeletarAcidente" prefWidth="60.0" text="Deletar" />
+                                             </columns></TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#tabCampeonatos" text="Campeonatos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab text="Cadastro">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Consulta">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="847.0" layoutY="3.0" mnemonicParsing="false" onAction="#VoltarMenu" text="Voltar" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="3.0" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="171.0" text="Tela de Cadastros" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="781.0" layoutY="3.0" mnemonicParsing="false" onAction="#botaoAtualizar" text="Atializar" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="3.0" />
+   </children>
+</AnchorPane>

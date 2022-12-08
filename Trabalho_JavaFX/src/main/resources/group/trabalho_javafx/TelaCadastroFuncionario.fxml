@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.trabalho_javafx.CadastroFuncionarioController">
+   <children>
+      <TabPane fx:id="tabPaneFunc" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab fx:id="tabCadastroFunc" text="Cadastro">
+               <content>
+                  <AnchorPane fx:id="anchorCadastros" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="67.0" prefHeight="39.0" prefWidth="185.0" text="Nome Completo:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="campoNomeFunc" layoutX="223.0" layoutY="67.0" prefHeight="39.0" prefWidth="500.0" promptText="Nome">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="campoDataNascFunc" layoutX="223.0" layoutY="106.0" prefHeight="39.0" prefWidth="500.0" promptText="Data de nascimento">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="106.0" prefHeight="39.0" prefWidth="185.0" text="Data de Nascimento">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="campoCpfFunc" layoutX="223.0" layoutY="145.0" prefHeight="39.0" prefWidth="500.0" promptText="CPF">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="145.0" prefHeight="39.0" prefWidth="185.0" text="CPF:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="campoCnpjFunc" layoutX="223.0" layoutY="184.0" prefHeight="39.0" prefWidth="500.0" promptText="CNPJ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="184.0" prefHeight="39.0" prefWidth="185.0" text="CNPJ:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="campoEmailFunc" layoutX="223.0" layoutY="223.0" prefHeight="39.0" prefWidth="500.0" promptText="Email">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="223.0" prefHeight="39.0" prefWidth="185.0" text="Email:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="262.0" prefHeight="39.0" prefWidth="185.0" text="Telefone:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="campoTelefoneFunc" layoutX="223.0" layoutY="262.0" prefHeight="39.0" prefWidth="500.0" promptText="Telefone">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="270.0" layoutY="335.0" mnemonicParsing="false" onAction="#botaoSalvarFunc" prefHeight="54.0" prefWidth="116.0" text="Salvar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabConsultaFunc" text="Consulta">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tabelaFunc" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="colunaNomeFunc" prefWidth="210.0" text="Nome" />
+                              <TableColumn fx:id="colunaDataNascFunc" minWidth="0.0" text="Data Nasc..." />
+                              <TableColumn fx:id="colunaCpfFunc" prefWidth="100.0" text="CPF" />
+                              <TableColumn fx:id="colunaCnpjFunc" prefWidth="130.0" text="CNPJ" />
+                              <TableColumn fx:id="colunaEmailFunc" prefWidth="150.0" text="Email" />
+                              <TableColumn fx:id="colunaTelefoneFunc" prefWidth="110.0" text="Telefone" />
+                              <TableColumn fx:id="colunaEditarFunc" minWidth="0.0" prefWidth="60.0" text="Editar" />
+                              <TableColumn fx:id="colunaDeletarFunc" minWidth="0.0" prefWidth="60.0" text="Deletar" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="7.0" layoutY="6.0" text="Cadastro de Funcionário" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="3.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="834.0" layoutY="4.0" mnemonicParsing="false" onAction="#VoltarMenu" text="Voltar" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+   </children>
+</AnchorPane>
