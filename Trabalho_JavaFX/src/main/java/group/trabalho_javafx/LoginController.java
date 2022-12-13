@@ -64,9 +64,9 @@ public class LoginController {
                 throw new SenhaErroException();
             }
         } catch (SenhaErroException e) {
-            Notificacao.MostraNotificacao("Erro de acesso.", e.getMessage(), "Usuario ou senha incorretos.");
+            Notificacao.NotificacaoLoginError("Erro de acesso", e.getMessage(), "Usuario ou senha incorretos");
         } catch (SenhaAcceptedException e) {
-            Notificacao.MostraNotificacao("Acesso concedido.", e.getMessage(), "Senha e usuario corretos.");
+            Notificacao.NotificacaoLoginAcess("Acesso concedido", e.getMessage(), "Senha e usuario corretos");
             HelloApplication.setRaiz("TelaMenu.fxml",600.,900.);
         }
     }

@@ -11,37 +11,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.trabalho_javafx.CadastroAcidenteController">
    <children>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <TabPane fx:id="tabPaneAcidentes" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <tabs>
-            <Tab text="Cadastro">
+            <Tab fx:id="tabCadastroAcidente" text="Cadastro">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="anchorCadastrosAcidente" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="25.0" layoutY="295.0" text="Titulo do acidente:">
+                        <Label layoutX="25.0" layoutY="295.0" text="Título do acidente:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="70.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+                        <TableView fx:id="tabelaDanos" layoutX="70.0" layoutY="22.0" AnchorPane.bottomAnchor="319.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="22.0">
                            <columns>
-                              <TableColumn fx:id="colunaDescricaoDano" prefWidth="760.0" text="Descrição do dano" />
+                              <TableColumn fx:id="colunaDescricaoDano" prefWidth="640.0" text="Descrição do dano" />
+                              <TableColumn fx:id="colunaEditarDano" prefWidth="60.0" text="Editar" />
+                              <TableColumn fx:id="colunaDeletarDano" prefWidth="60.0" text="Deletar" />
                            </columns>
                         </TableView>
-                        <Label layoutX="86.0" layoutY="243.0" text="Dano causado:">
+                        <Label layoutX="52.0" layoutY="244.0" text="Dano causado:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="campoDanoAcidente" layoutX="211.0" layoutY="239.0" prefHeight="35.0" prefWidth="490.0">
+                        <TextField fx:id="campoDanoAcidente" layoutX="177.0" layoutY="240.0" prefHeight="35.0" prefWidth="490.0" promptText="Dano causado">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="716.0" layoutY="240.0" mnemonicParsing="false" onAction="#botaoAdicionarDano" prefHeight="33.0" prefWidth="97.0" text="Adicionar dano" />
-                        <TextField fx:id="campoTittuloAcidente" layoutX="179.0" layoutY="291.0" prefHeight="35.0" prefWidth="338.0">
+                        <Button layoutX="682.0" layoutY="241.0" mnemonicParsing="false" onAction="#botaoAdicionarDano" prefHeight="33.0" prefWidth="97.0" text="Adicionar dano" />
+                        <TextField fx:id="campoTituloAcidente" layoutX="179.0" layoutY="291.0" prefHeight="35.0" prefWidth="338.0" promptText="Título do acidente">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -51,18 +52,18 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="campoRelatorioAcidente" layoutX="239.0" layoutY="355.0" prefHeight="123.0" prefWidth="591.0">
+                        <TextArea fx:id="campoRelatorioAcidente" layoutX="239.0" layoutY="355.0" prefHeight="123.0" prefWidth="591.0" promptText="Relatório do ocorrido" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextArea>
-                        <Button layoutX="86.0" layoutY="408.0" mnemonicParsing="false" onAction="#botaoCadastrarAcidente" prefHeight="51.0" prefWidth="117.0" text="Cadastrar Acidente" />
+                        <Button layoutX="70.0" layoutY="400.0" mnemonicParsing="false" onAction="#botaoCadastrarAcidente" prefHeight="51.0" prefWidth="117.0" text="Cadastrar Acidente" />
                         <Label layoutX="520.0" layoutY="295.0" text="Data/Horário:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="campoDataAcidente" layoutX="632.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0">
+                        <TextField fx:id="campoDataAcidente" layoutX="632.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0" promptText="Data">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -72,7 +73,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="campoHorarioAcidente" layoutX="736.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0">
+                        <TextField fx:id="campoHorarioAcidente" layoutX="736.0" layoutY="291.0" prefHeight="35.0" prefWidth="94.0" promptText="Horário">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -81,18 +82,18 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Consulta">
+            <Tab fx:id="tabConsultaAcidente" text="Consulta">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tabelaAcidadentes" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn fx:id="colunaTituoAcidente" prefWidth="350.0" text="Titulo Acidente" />
+                              <TableColumn fx:id="colunaTituoAcidente" prefWidth="340.0" text="Titulo Acidente" />
                               <TableColumn fx:id="colunaDataHorario" prefWidth="130.0" text="Data/Horário" />
                               <TableColumn fx:id="colunaDanosAcidente" prefWidth="75.0" text="Danos" />
                               <TableColumn fx:id="colunaRelatorioAcidente" prefWidth="75.0" text="Relatório" />
                               <TableColumn fx:id="colunaEditarAcidente" prefWidth="60.0" text="Editar" />
-                              <TableColumn fx:id="colunaDeletarAcidente" prefWidth="60.0" text="Deletar" />
+                              <TableColumn fx:id="colunaDeletarAcidente" prefWidth="70.0" text="Deletar" />
                            </columns>
                         </TableView>
                      </children>

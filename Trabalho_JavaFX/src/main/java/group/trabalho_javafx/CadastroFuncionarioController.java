@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Arrays;
 
-import group.trabalho_javafx.Exceptions.AtributoException;
+import group.trabalho_javafx.Exceptions.AtributoVazioException;
 import group.trabalho_javafx.Util.Listas;
 import group.trabalho_javafx.Util.Notificacao;
 
@@ -70,7 +70,7 @@ public class CadastroFuncionarioController implements Initializable {
     private TableColumn<Funcionario, String> colunaTelefoneFunc;
 
     @FXML
-    private AnchorPane anchorCadastros;
+    private AnchorPane anchorCadastrosFunc;
 
     @FXML
     private Tab tabCadastroFunc;
@@ -87,6 +87,8 @@ public class CadastroFuncionarioController implements Initializable {
     private ObservableList<Funcionario> obsLista;
 
     private Funcionario funcionario;
+
+    private Button botaoCancelarEdicao;
 
     @FXML
     void VoltarMenu(ActionEvent event) throws IOException {
@@ -121,7 +123,7 @@ public class CadastroFuncionarioController implements Initializable {
                 }
             }
 
-            throw new AtributoException(atributosFalta);
+            throw new AtributoVazioException(atributosFalta);
         }
 
         if (funcionario == null) {
@@ -131,6 +133,7 @@ public class CadastroFuncionarioController implements Initializable {
             int posicao = Listas.listaFuncionarios.indexOf(funcionario);
             funcionario = new Funcionario(nome, dataNasc, cpf, cnpj, email, telefone);
             Listas.listaFuncionarios.set(posicao, funcionario);
+            anchorCadastrosFunc.getChildren().remove(botaoCancelarEdicao);
         }
 
         limparFormulario();
@@ -141,7 +144,7 @@ public class CadastroFuncionarioController implements Initializable {
         
         Notificacao.MostraNotificacao("Cadastro realizado com sucesso!!",null,"O cadastro foi realizado");
 
-        } catch (AtributoException e) {
+        } catch (AtributoVazioException e) {
             Notificacao.MostraNotificacao("Erro de sintaxe", "O seu cadastro não possui os seguintes atributos: ", e.getMessage());
         } catch (Exception e) {
             Notificacao.MostraNotificacao("Erro inesperado", e.getMessage(), null);
@@ -234,9 +237,9 @@ public class CadastroFuncionarioController implements Initializable {
 
                 tabPaneFunc.getSelectionModel().select(tabCadastroFunc);
 
-                Button botaoCancelarEdicao = new Button();
+                botaoCancelarEdicao = new Button("Cancelar Edicao");
 
-                botaoCancelarEdicao.setText("Cancelar Edicao");
+                botaoCancelarEdicao.setId("botaoCancelarEdicao");
 
                 botaoCancelarEdicao.setFont(new Font(14));
 
@@ -247,13 +250,13 @@ public class CadastroFuncionarioController implements Initializable {
 
                 botaoCancelarEdicao.setOnAction(event -> cancelarEdicao(botaoCancelarEdicao));
 
-                anchorCadastros.getChildren().add(botaoCancelarEdicao);
+                anchorCadastrosFunc.getChildren().add(botaoCancelarEdicao);
             }
 
             private void cancelarEdicao(Button botao){
                 limparFormulario();
                 funcionario = null;
-                anchorCadastros.getChildren().remove(botao);
+                anchorCadastrosFunc.getChildren().remove(botao);
             }
         });
     }

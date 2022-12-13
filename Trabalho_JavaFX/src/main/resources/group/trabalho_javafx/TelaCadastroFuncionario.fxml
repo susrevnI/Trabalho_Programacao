@@ -16,7 +16,7 @@
          <tabs>
             <Tab fx:id="tabCadastroFunc" text="Cadastro">
                <content>
-                  <AnchorPane fx:id="anchorCadastros" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="anchorCadastrosFunc" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="67.0" prefHeight="39.0" prefWidth="185.0" text="Nome Completo:">
                            <font>
@@ -93,14 +93,14 @@
                      <children>
                         <TableView fx:id="tabelaFunc" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn fx:id="colunaNomeFunc" prefWidth="210.0" text="Nome" />
+                              <TableColumn fx:id="colunaNomeFunc" prefWidth="200.0" text="Nome" />
                               <TableColumn fx:id="colunaDataNascFunc" minWidth="0.0" text="Data Nasc..." />
                               <TableColumn fx:id="colunaCpfFunc" prefWidth="100.0" text="CPF" />
                               <TableColumn fx:id="colunaCnpjFunc" prefWidth="130.0" text="CNPJ" />
                               <TableColumn fx:id="colunaEmailFunc" prefWidth="150.0" text="Email" />
                               <TableColumn fx:id="colunaTelefoneFunc" prefWidth="110.0" text="Telefone" />
                               <TableColumn fx:id="colunaEditarFunc" minWidth="0.0" prefWidth="60.0" text="Editar" />
-                              <TableColumn fx:id="colunaDeletarFunc" minWidth="0.0" prefWidth="60.0" text="Deletar" />
+                              <TableColumn fx:id="colunaDeletarFunc" minWidth="0.0" prefWidth="70.0" text="Deletar" />
                            </columns>
                         </TableView>
                      </children>
